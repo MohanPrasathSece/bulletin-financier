@@ -5,15 +5,15 @@ import { ArticleRow } from "@/components/site/ArticleCard";
 export const Route = createFileRoute("/archive")({
   head: () => ({
     meta: [
-      { title: "Archive — The Ledger Standard" },
-      { name: "description", content: "Browse our complete archive of crypto news and analysis." },
+      { title: "Archives - The Ledger Standard" },
+      { name: "description", content: "Parcourez nos archives complètes d'actualités et d'analyses crypto." },
     ],
   }),
   component: () => (
     <div className="max-w-4xl mx-auto px-6 py-16">
       <header className="border-b-[3px] border-double border-foreground pb-6 mb-10">
-        <div className="eyebrow text-primary">The Archive</div>
-        <h1 className="headline-xl text-5xl md:text-6xl mt-2">Every story we've published.</h1>
+        <div className="eyebrow text-primary">Les archives</div>
+        <h1 className="headline-xl text-5xl md:text-6xl mt-2">Toutes les histoires que nous avons publiées.</h1>
       </header>
       <div>
         {ARTICLES.map((a) => (

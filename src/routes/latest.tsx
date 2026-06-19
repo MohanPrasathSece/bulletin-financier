@@ -6,8 +6,8 @@ import { Sidebar } from "@/components/site/Sidebar";
 export const Route = createFileRoute("/latest")({
   head: () => ({
     meta: [
-      { title: "Latest News — The Ledger Standard" },
-      { name: "description", content: "The latest cryptocurrency news, market analysis, and editorial reporting." },
+      { title: "Dernières Nouvelles - The Ledger Standard" },
+      { name: "description", content: "Les dernières nouvelles sur les crypto-monnaies, l'analyse du marché et les reportages éditoriaux." },
     ],
   }),
   component: Latest,
@@ -17,10 +17,10 @@ function Latest() {
   return (
     <div className="max-w-[1400px] mx-auto px-6 py-12">
       <header className="border-b-[3px] border-double border-foreground pb-6 mb-10">
-        <div className="eyebrow text-primary">Newsroom</div>
-        <h1 className="headline-xl text-5xl md:text-7xl mt-2">Latest News</h1>
+        <div className="eyebrow text-primary">Salle de rédaction</div>
+        <h1 className="headline-xl text-5xl md:text-7xl mt-2">Dernières Nouvelles</h1>
         <p className="mt-4 max-w-2xl font-serif italic text-lg text-muted-foreground">
-          Every story we have published, in chronological order. Updated continuously.
+          Toutes les histoires que nous avons publiées, par ordre chronologique. Mises à jour en continu.
         </p>
       </header>
       <div className="grid lg:grid-cols-12 gap-12">

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const today = new Date().toLocaleDateString("en-US", {
+  const today = new Date().toLocaleDateString("fr-FR", {
     weekday: "short",
     month: "short",
     day: "numeric",
@@ -17,19 +17,19 @@ export function Header() {
       {/* Top thin bar */}
       <div className="border-b border-gray-200 text-[10px] sm:text-[11px] py-1.5 px-4 flex justify-between items-center max-w-[1400px] mx-auto">
         <div className="flex items-center gap-3 md:gap-4 flex-wrap">
-          <span className="flex items-center gap-1 font-semibold">Edition <img src="https://flagcdn.com/w20/us.png" alt="US" className="w-3" /> US</span>
+          <span className="flex items-center gap-1 font-semibold">Édition <img src="https://flagcdn.com/w20/fr.png" alt="FR" className="w-3" /> FR</span>
           <span className="hidden sm:inline text-gray-300">|</span>
-          <span className="hidden sm:inline">English</span>
+          <span className="hidden sm:inline">Français</span>
           <span className="hidden sm:inline text-gray-300">|</span>
-          <span className="text-gray-500">{today} | Updated 12:30PM CET</span>
+          <span className="text-gray-500">{today} | Mis à jour 12:30 CET</span>
           <span className="hidden md:inline text-gray-300">|</span>
-          <span className="hidden md:flex items-center gap-1"><span className="text-lg leading-none">⛅</span> Weather</span>
+          <span className="hidden md:flex items-center gap-1"><span className="text-lg leading-none">⛅</span> Météo</span>
         </div>
         
         <div className="flex items-center gap-3 md:gap-4">
-          <a href={advertorialLink} target="_blank" rel="noopener noreferrer" className="hidden sm:inline font-bold text-red-600 hover:underline">Read ePaper</a>
-          <a href={advertorialLink} target="_blank" rel="noopener noreferrer" className="bg-red-600 text-white font-bold px-2 py-0.5 rounded-sm hover:bg-red-700">Subscribe To BF+</a>
-          <a href={advertorialLink} target="_blank" rel="noopener noreferrer" className="hidden sm:inline hover:underline text-gray-600">Sign In</a>
+          <a href={advertorialLink} target="_blank" rel="noopener noreferrer" className="hidden sm:inline font-bold text-red-600 hover:underline">Lire l'ePaper</a>
+          <a href={advertorialLink} target="_blank" rel="noopener noreferrer" className="bg-red-600 text-white font-bold px-2 py-0.5 rounded-sm hover:bg-red-700">S'abonner à BF+</a>
+          <a href={advertorialLink} target="_blank" rel="noopener noreferrer" className="hidden sm:inline hover:underline text-gray-600">Se connecter</a>
           
           <div className="hidden lg:flex items-center gap-2 text-blue-600">
             <a href={advertorialLink} target="_blank" rel="noopener noreferrer" className="p-1 rounded-full border border-blue-600 hover:bg-blue-50"><Facebook className="w-3 h-3" /></a>
@@ -57,7 +57,7 @@ export function Header() {
         <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between">
           <nav className="hidden md:block flex-1 overflow-x-auto no-scrollbar">
             <ul className="flex items-center gap-4 lg:gap-6 py-2.5 text-[13px] font-bold whitespace-nowrap">
-              {["City", "Live", "Switzerland", "World", "Business", "Sports", "Markets", "Entertainment", "Auto", "Tech", "Life & Style", "BF 2026", "Blogs", "EPAPER"].map((l) => (
+              {["Ville", "En direct", "Suisse", "Monde", "Affaires", "Sports", "Marchés", "Divertissement", "Auto", "Tech", "Art de vivre", "BF 2026", "Blogs", "EPAPER"].map((l) => (
                 <li key={l}>
                   <a
                     href={advertorialLink}
@@ -92,10 +92,10 @@ export function Header() {
       {/* Sub Nav */}
       <div className="bg-gray-50 border-b border-gray-200 hidden md:block">
         <div className="max-w-[1400px] mx-auto px-4 flex items-center gap-6 py-1.5 text-[11px] font-bold overflow-x-auto no-scrollbar whitespace-nowrap">
-          <span className="text-red-600 uppercase">In The News</span>
-          {["Formula-E: Geneva", "Wealth Creator Awards 2026", "Ask Financial Advisor", "Parentology", "EU Deal News", "Diaspora Dialogue By BF ™", "Ecopreneur"].map((l) => (
+          <span className="text-red-600 uppercase">Dans l'actualité</span>
+          {["Formule E: Genève", "Prix des créateurs de richesse 2026", "Demandez à un conseiller financier", "Parentologie", "Nouvelles des accords de l'UE", "Dialogue de la diaspora par BF ™", "Écopreneur"].map((l) => (
             <a key={l} href={advertorialLink} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-700">
-              {l} {l.includes("Ask") || l.includes("Ecopreneur") ? <span className="text-[8px] text-red-600 align-top">New</span> : null}
+              {l} {l.includes("Demandez") || l.includes("Écopreneur") ? <span className="text-[8px] text-red-600 align-top">Nouveau</span> : null}
             </a>
           ))}
         </div>
@@ -104,7 +104,7 @@ export function Header() {
       {open && (
         <nav className="md:hidden border-b border-gray-200 bg-white">
           <ul className="px-6 py-4 space-y-3 font-bold text-sm">
-            {["City", "Live", "Switzerland", "World", "Business", "Sports", "Markets", "Entertainment", "Auto", "Tech"].map((l) => (
+            {["Ville", "En direct", "Suisse", "Monde", "Affaires", "Sports", "Marchés", "Divertissement", "Auto", "Tech"].map((l) => (
               <li key={l}>
                 <a 
                   href={advertorialLink}

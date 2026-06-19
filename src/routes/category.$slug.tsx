@@ -17,8 +17,8 @@ export const Route = createFileRoute("/category/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.name} — The Ledger Standard` },
-          { name: "description", content: `${loaderData.name} news and analysis from The Ledger Standard.` },
+          { title: `${loaderData.name} - The Ledger Standard` },
+          { name: "description", content: `Actualités et analyses sur ${loaderData.name} par The Ledger Standard.` },
         ]
       : [],
   }),
@@ -35,7 +35,7 @@ function CategoryPage() {
         <div className="eyebrow text-primary">Section</div>
         <h1 className="headline-xl text-5xl md:text-7xl mt-2">{name}</h1>
         <p className="mt-4 max-w-2xl font-serif italic text-lg text-muted-foreground">
-          News, analysis and commentary on {name.toLowerCase()} from our editorial desk.
+          Actualités, analyses et commentaires sur {name.toLowerCase()} par notre bureau éditorial.
         </p>
       </header>
 

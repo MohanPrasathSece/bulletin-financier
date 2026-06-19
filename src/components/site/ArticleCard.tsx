@@ -54,12 +54,12 @@ export function ArticleCard({
         )}
         <div className="mt-4 byline flex items-center gap-2">
           <Link to="/author/$slug" params={{ slug: author.slug }} className="hover:text-foreground">
-            By {author.name}
+            Par {author.name}
           </Link>
           <span>·</span>
           <span>{article.date}</span>
           <span>·</span>
-          <span>{article.readingTime} min read</span>
+          <span>{article.readingTime} min de lecture</span>
         </div>
       </div>
     </article>

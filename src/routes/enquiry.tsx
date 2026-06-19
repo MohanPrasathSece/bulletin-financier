@@ -48,8 +48,8 @@ const submitToCRM = async (data: { [key: string]: string }) => {
 export const Route = createFileRoute("/enquiry")({
   head: () => ({
     meta: [
-      { title: "Quantum Trading Platform | Register Now" },
-      { name: "description", content: "Join the future of decentralized algorithmic trading." },
+      { title: "Plateforme de trading quantique | S'inscrire maintenant" },
+      { name: "description", content: "Rejoignez l'avenir du trading algorithmique décentralisé." },
     ]
   }),
   component: EnquiryPage,
@@ -99,7 +99,7 @@ function EnquiryPage() {
       await submitToCRM(dataObj);
       setSuccess(true);
     } catch (err: any) {
-      setError("Registration failed. Please try again later.");
+      setError("L'inscription a échoué. Veuillez réessayer plus tard.");
     } finally {
       setLoading(false);
     }
@@ -118,11 +118,11 @@ function EnquiryPage() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-black text-black">Q</div>
-            <span className="font-bold tracking-widest uppercase text-sm">Quantum Protocol</span>
+            <span className="font-bold tracking-widest uppercase text-sm">Protocole Quantique</span>
           </div>
           <nav className="hidden md:flex gap-6 text-xs uppercase tracking-widest font-bold text-gray-400">
-            <a href="#platform" className="hover:text-cyan-400 transition-colors">Platform</a>
-            <a href="#algorithm" className="hover:text-cyan-400 transition-colors">Algorithm</a>
+            <a href="#platform" className="hover:text-cyan-400 transition-colors">Plateforme</a>
+            <a href="#algorithm" className="hover:text-cyan-400 transition-colors">Algorithme</a>
             <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
           </nav>
         </div>
@@ -136,22 +136,22 @@ function EnquiryPage() {
           <div className="space-y-8 relative">
             <FadeInSection>
               <div className="inline-block px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-widest backdrop-blur-sm relative z-10">
-                Access The Quantum Network
+                Accéder au réseau quantique
               </div>
             </FadeInSection>
             
             <FadeInSection delay="100ms">
               <h1 className="text-5xl lg:text-7xl font-black leading-tight tracking-tighter relative z-10">
-                Trade the <br/>
+                Tradez le <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 animate-gradient-x">
-                  Future Today.
+                  Futur Aujourd'hui.
                 </span>
               </h1>
             </FadeInSection>
             
             <FadeInSection delay="200ms">
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-lg relative z-10">
-                Join 14,000+ elite traders using our proprietary AI algorithms to execute high-frequency crypto trades with 98% accuracy.
+                Rejoignez plus de 14 000 traders d'élite utilisant nos algorithmes d'IA propriétaires pour exécuter des transactions crypto à haute fréquence avec une précision de 98%.
               </p>
             </FadeInSection>
 
@@ -159,14 +159,14 @@ function EnquiryPage() {
             <FadeInSection delay="300ms">
               <div className="grid grid-cols-2 gap-6 pt-6 relative z-10">
                 <div className="border border-white/10 bg-white/5 p-4 rounded-2xl backdrop-blur-md hover:scale-105 hover:bg-white/10 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] transition-all duration-300 animate-[float_4s_ease-in-out_infinite]">
-                  <div className="text-cyan-400 text-sm font-bold uppercase tracking-wider mb-1">24h Trading Volume</div>
+                  <div className="text-cyan-400 text-sm font-bold uppercase tracking-wider mb-1">Volume sur 24h</div>
                   <div className="text-3xl font-black font-mono tracking-tighter">$2.4B+</div>
-                  <div className="text-green-400 text-xs mt-2 font-mono">▲ 14.2% from yesterday</div>
+                  <div className="text-green-400 text-xs mt-2 font-mono">▲ 14,2% depuis hier</div>
                 </div>
                 <div className="border border-white/10 bg-white/5 p-4 rounded-2xl backdrop-blur-md hover:scale-105 hover:bg-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all duration-300 animate-[float_5s_ease-in-out_infinite_reverse]">
-                  <div className="text-purple-400 text-sm font-bold uppercase tracking-wider mb-1">Active AI Nodes</div>
-                  <div className="text-3xl font-black font-mono tracking-tighter">1,024</div>
-                  <div className="text-cyan-400 text-xs mt-2 font-mono">● All systems operational</div>
+                  <div className="text-purple-400 text-sm font-bold uppercase tracking-wider mb-1">Nœuds d'IA actifs</div>
+                  <div className="text-3xl font-black font-mono tracking-tighter">1 024</div>
+                  <div className="text-cyan-400 text-xs mt-2 font-mono">�-� Tous les systèmes sont opérationnels</div>
                 </div>
               </div>
             </FadeInSection>
@@ -178,8 +178,8 @@ function EnquiryPage() {
               <div className="absolute -inset-[1px] bg-gradient-to-br from-cyan-500 via-purple-500 to-transparent rounded-3xl opacity-50 blur-sm animate-pulse"></div>
               
               <div className="relative bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 md:p-10 shadow-[0_0_50px_rgba(34,211,238,0.1)] backdrop-blur-xl">
-                <h2 className="text-3xl font-black mb-2">Contact Us</h2>
-                <p className="text-gray-400 text-sm mb-8">Get in touch with our elite trading team.</p>
+                <h2 className="text-3xl font-black mb-2">Contactez-nous</h2>
+                <p className="text-gray-400 text-sm mb-8">Contactez notre équipe de trading d'élite.</p>
 
                 {success ? (
                   <div className="bg-green-500/10 border border-green-500/30 text-green-400 p-6 rounded-xl text-center space-y-4 animate-in zoom-in duration-500">
@@ -188,8 +188,8 @@ function EnquiryPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold">Message Sent</h3>
-                    <p className="text-sm opacity-80">We have received your enquiry. An advisor will contact you shortly.</p>
+                    <h3 className="text-xl font-bold">Message envoyé</h3>
+                    <p className="text-sm opacity-80">Nous avons bien reçu votre demande. Un conseiller vous contactera sous peu.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5 group">
@@ -200,7 +200,7 @@ function EnquiryPage() {
                     )}
                     
                     <div className="group-hover:translate-x-1 transition-transform">
-                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Full Legal Name</label>
+                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Nom complet</label>
                       <input 
                         name="name" 
                         required 
@@ -210,7 +210,7 @@ function EnquiryPage() {
                     </div>
                     
                     <div className="group-hover:translate-x-1 transition-transform" style={{ transitionDelay: "50ms" }}>
-                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Secure Email</label>
+                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">E-mail sécurisé</label>
                       <input 
                         name="email" 
                         type="email" 
@@ -221,7 +221,7 @@ function EnquiryPage() {
                     </div>
                     
                     <div className="group-hover:translate-x-1 transition-transform" style={{ transitionDelay: "100ms" }}>
-                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Mobile Number</label>
+                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Numéro de mobile</label>
                       <input 
                         name="phone" 
                         type="tel" 
@@ -232,11 +232,11 @@ function EnquiryPage() {
                     </div>
                     
                     <div className="group-hover:translate-x-1 transition-transform" style={{ transitionDelay: "150ms" }}>
-                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">How can we help you? (Optional)</label>
+                      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Comment pouvons-nous vous aider ? (Facultatif)</label>
                       <textarea 
                         name="message" 
                         rows={2} 
-                        placeholder="E.g., Looking for investment strategies..."
+                        placeholder="Ex. : À la recherche de stratégies d'investissement..."
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent focus:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all resize-none" 
                       />
                     </div>
@@ -249,12 +249,12 @@ function EnquiryPage() {
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 opacity-50 hover:opacity-100 transition-opacity blur-md animate-pulse"></div>
                       <div className="relative bg-[#0a0a0a] hover:bg-transparent transition-colors rounded-xl px-6 py-4 flex items-center justify-center">
                         <span className="font-bold text-white uppercase tracking-widest">
-                          {loading ? "Sending..." : "Send Message"}
+                          {loading ? "Envoi en cours..." : "Envoyer le message"}
                         </span>
                       </div>
                     </button>
                     <p className="text-center text-[10px] text-gray-500 uppercase tracking-wider mt-4">
-                      By submitting, you agree to our Terms & Privacy Policy
+                      En soumettant, vous acceptez nos conditions et notre politique de confidentialité
                     </p>
                   </form>
                 )}
@@ -276,11 +276,11 @@ function EnquiryPage() {
             </FadeInSection>
             <div className="space-y-6 order-1 md:order-2">
               <FadeInSection delay="100ms">
-                <h2 className="text-4xl md:text-5xl font-black">The Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-500">Gold Standard.</span></h2>
+                <h2 className="text-4xl md:text-5xl font-black">L'étalon-or <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-500">numérique.</span></h2>
               </FadeInSection>
               <FadeInSection delay="200ms">
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  Bitcoin is more than just a currency; it is the foundation of the new decentralized economy. Our quantum algorithms are specifically optimized for trading BTC pairs across global markets with unparalleled precision and minimal slippage.
+                  Le Bitcoin est plus qu'une simple monnaie ; c'est le fondement de la nouvelle économie décentralisée. Nos algorithmes quantiques sont spécifiquement optimisés pour le trading de paires BTC sur les marchés mondiaux avec une précision inégalée et un glissement minimal.
                 </p>
               </FadeInSection>
             </div>
@@ -293,11 +293,11 @@ function EnquiryPage() {
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <FadeInSection delay="100ms">
-                <h2 className="text-4xl md:text-5xl font-black">Live <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Execution.</span></h2>
+                <h2 className="text-4xl md:text-5xl font-black">Exécution en <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">direct.</span></h2>
               </FadeInSection>
               <FadeInSection delay="200ms">
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  Watch our proprietary Quantum Terminal identify arbitrage opportunities and execute micro-trades in real-time. What you see is our deep learning engine scanning decentralized liquidity pools continuously.
+                  Regardez notre terminal quantique exclusif identifier les opportunités d'arbitrage et exécuter des micro-transactions en temps réel. Ce que vous voyez, c'est notre moteur d'apprentissage profond qui scrute en permanence les pools de liquidité décentralisés.
                 </p>
               </FadeInSection>
             </div>
@@ -351,16 +351,16 @@ function EnquiryPage() {
           <div className="max-w-7xl mx-auto px-6">
             <FadeInSection>
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-black mb-4">Powered by <span className="text-cyan-400">Deep Learning</span></h2>
-                <p className="text-gray-400 max-w-2xl mx-auto">Our neural networks analyze terabytes of market data per second to identify profitable arbitrage opportunities across decentralized exchanges.</p>
+                <h2 className="text-3xl md:text-5xl font-black mb-4">Propulsé par le <span className="text-cyan-400">Deep Learning</span></h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">Nos réseaux de neurones analysent des téraoctets de données de marché par seconde pour identifier des opportunités d'arbitrage rentables sur les échanges décentralisés.</p>
               </div>
             </FadeInSection>
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: "Zero Latency Execution", desc: "Co-located servers ensure your trades are executed fractions of a millisecond before the market reacts.", delay: "0ms" },
-                { title: "Military-Grade Encryption", desc: "Your assets are protected by SHA-256 cryptography and multi-signature cold storage vaults.", delay: "200ms" },
-                { title: "Automated Compounding", desc: "Smart contracts automatically reinvest your profits to maximize exponential portfolio growth.", delay: "400ms" }
+                { title: "Exécution sans latence", desc: "Des serveurs colocalisés garantissent que vos transactions sont exécutées des fractions de milliseconde avant que le marché ne réagisse.", delay: "0ms" },
+                { title: "Chiffrement de niveau militaire", desc: "Vos actifs sont protégés par la cryptographie SHA-256 et des coffres de stockage à froid multi-signatures.", delay: "200ms" },
+                { title: "Composition automatisée", desc: "Les contrats intelligents réinvestissent automatiquement vos profits pour maximiser la croissance exponentielle de votre portefeuille.", delay: "400ms" }
               ].map((feature, i) => (
                 <FadeInSection key={i} delay={feature.delay}>
                   <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(34,211,238,0.15)] hover:border-cyan-500/30 transition-all duration-300 group cursor-default">
@@ -382,13 +382,13 @@ function EnquiryPage() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 rounded bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-black text-black text-xs">Q</div>
-            <span className="font-bold tracking-widest uppercase text-xs text-gray-500">Quantum Protocol © 2026</span>
+            <span className="font-bold tracking-widest uppercase text-xs text-gray-500">Protocole Quantique © 2026</span>
           </div>
           
           <div className="flex gap-6 text-[10px] uppercase tracking-widest font-bold text-gray-500">
-            <a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Risk Disclosure</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors">Politique de confidentialité</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors">Conditions d'utilisation</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors">Divulgation des risques</a>
           </div>
         </div>
       </footer>

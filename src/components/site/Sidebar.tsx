@@ -23,7 +23,7 @@ export function Sidebar() {
     <aside className="space-y-10 sticky top-44">
       {/* Prices */}
       <section>
-        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Crypto Prices</h3>
+        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Prix des cryptomonnaies</h3>
         <ul className="text-sm font-mono">
           {PRICES.slice(0, 6).map((p) => (
             <li key={p.sym} className="flex items-center justify-between py-2 border-b border-border last:border-0">
@@ -40,7 +40,7 @@ export function Sidebar() {
 
       {/* Fear & Greed */}
       <section>
-        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Fear & Greed Index</h3>
+        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Indice de peur et de cupidité</h3>
         <div className="bg-card border border-border p-5 text-center">
           <div className="text-5xl font-serif font-black text-primary">{FEAR_GREED.value}</div>
           <div className="eyebrow mt-1" style={{ color: "var(--gold)" }}>{FEAR_GREED.label}</div>
@@ -48,14 +48,14 @@ export function Sidebar() {
             <div className="h-full bg-primary" style={{ width: `${FEAR_GREED.value}%` }} />
           </div>
           <p className="mt-3 text-xs text-muted-foreground">
-            Updated daily. Source: composite of seven market indicators.
+            Mis à jour quotidiennement. Source : composite de sept indicateurs de marché.
           </p>
         </div>
       </section>
 
       {/* Trending */}
       <section>
-        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Trending</h3>
+        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Tendances</h3>
         <ol className="space-y-4">
           {trending.map((a, i) => (
             <li key={a.slug} className="flex gap-3">
@@ -77,7 +77,7 @@ export function Sidebar() {
 
       {/* Events */}
       <section>
-        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Upcoming Events</h3>
+        <h3 className="eyebrow border-b-2 border-foreground pb-2 mb-3">Événements à venir</h3>
         <ul className="space-y-3">
           {EVENTS.map((e) => (
             <li key={e.title} className="flex gap-3 items-start">
@@ -90,9 +90,9 @@ export function Sidebar() {
 
       {/* Ad / Editor's pick */}
       <section className="bg-foreground text-background p-6 text-center">
-        <div className="eyebrow opacity-70">Editor's Pick</div>
+        <div className="eyebrow opacity-70">Choix de la rédaction</div>
         <p className="font-serif text-xl mt-2 leading-snug">
-          "The boring revolution: how tokenisation became inevitable."
+          "La révolution ennuyeuse : comment la tokenisation est devenue inévitable."
         </p>
         <a
           href="/enquiry"
@@ -100,7 +100,7 @@ export function Sidebar() {
           rel="noopener noreferrer"
           className="inline-block mt-4 text-xs uppercase tracking-widest border border-background/40 px-4 py-2 hover:bg-background hover:text-foreground transition-colors"
         >
-          Read the Essay
+          Lire l'essai
         </a>
       </section>
     </aside>

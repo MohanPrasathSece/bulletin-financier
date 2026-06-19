@@ -10,10 +10,10 @@ export function Footer() {
           </h2>
           <div className="flex gap-4">
             <a href="/enquiry" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 font-bold uppercase text-xs hover:bg-gray-800 transition-colors">
-              Subscribe to Newsletter
+              S'abonner à la newsletter
             </a>
             <a href="/enquiry" target="_blank" rel="noopener noreferrer" className="border-2 border-black px-6 py-3 font-bold uppercase text-xs hover:bg-black hover:text-white transition-colors">
-              Download App
+              Télécharger l'application
             </a>
           </div>
         </div>
@@ -22,28 +22,28 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-[13px]">
           {[
             {
-              h: "Top Sections",
-              items: ["Latest News", "Top Stories", "Trending", "Business", "Markets", "Economy", "Politics", "World News", "Tech News"]
+              h: "Sections principales",
+              items: ["Dernières nouvelles", "À la une", "Tendances", "Affaires", "Marchés", "Économie", "Politique", "Actualités mondiales", "Actualités Tech"]
             },
             {
-              h: "Wealth & Finance",
-              items: ["Crypto Secrets", "Stock Market", "Investment Guides", "Passive Income", "Real Estate", "Personal Finance", "Retirement", "Taxes"]
+              h: "Patrimoine et finances",
+              items: ["Secrets crypto", "Bourse", "Guides d'investissement", "Revenu passif", "Immobilier", "Finances personnelles", "Retraite", "Impôts"]
             },
             {
-              h: "Opinion & Editorials",
-              items: ["Expert Columns", "Guest Writers", "Editorial Board", "Letters to Editor", "Market Analysis", "Political Commentary", "Interviews"]
+              h: "Opinion et éditoriaux",
+              items: ["Chroniques d'experts", "Auteurs invités", "Comité de rédaction", "Courrier des lecteurs", "Analyse du marché", "Commentaire politique", "Interviews"]
             },
             {
-              h: "Lifestyle & Culture",
-              items: ["Health & Fitness", "Travel", "Food & Dining", "Arts & Entertainment", "Books", "Fashion", "Automotive", "Luxury"]
+              h: "Style de vie et culture",
+              items: ["Santé et forme physique", "Voyage", "Restauration et gastronomie", "Arts et divertissement", "Livres", "Mode", "Automobile", "Luxe"]
             },
             {
-              h: "Digital Services",
-              items: ["ePaper Access", "Mobile Apps", "Newsletters", "RSS Feeds", "Podcasts", "Video Channel", "Live TV", "Alerts"]
+              h: "Services numériques",
+              items: ["Accès ePaper", "Applications mobiles", "Newsletters", "Flux RSS", "Podcasts", "Chaîne vidéo", "Direct TV", "Alertes"]
             },
             {
-              h: "Corporate Info",
-              items: ["About Us", "Contact Us", "Careers", "Advertise with Us", "Terms of Use", "Privacy Policy", "Cookie Policy", "Sitemap"]
+              h: "Infos d'entreprise",
+              items: ["À propos de nous", "Nous contacter", "Carrières", "Annoncez avec nous", "Conditions d'utilisation", "Politique de confidentialité", "Politique des cookies", "Plan du site"]
             }
           ].map((col) => (
             <div key={col.h}>
@@ -63,9 +63,9 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-gray-300 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <p>Copyright © {new Date().getFullYear()} Bulletin Financier Media Ltd. All rights reserved.</p>
+          <p>Copyright © {new Date().getFullYear()} Bulletin Financier Media Ltd. Tous droits réservés.</p>
           <p className="text-center md:text-right max-w-2xl">
-            Reproduction of news articles, photos, videos or any other content in whole or in part in any form or medium without express written permission of Bulletin Financier is prohibited.
+            La reproduction d'articles d'actualité, de photos, de vidéos ou de tout autre contenu, en tout ou en partie, sous quelque forme ou sur quelque support que ce soit, sans l'autorisation écrite expresse de Bulletin Financier est interdite.
           </p>
         </div>
       </div>

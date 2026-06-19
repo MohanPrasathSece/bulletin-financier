@@ -11,7 +11,7 @@ export const Route = createFileRoute("/author/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.author.name} — The Ledger Standard` },
+          { title: `${loaderData.author.name} - The Ledger Standard` },
           { name: "description", content: loaderData.author.bio },
         ]
       : [],
@@ -38,14 +38,14 @@ function AuthorPage() {
       </header>
 
       <h2 className="eyebrow border-b-2 border-foreground pb-2 mt-14 mb-6">
-        Recent Stories by {author.name}
+        Histoires récentes de {author.name}
       </h2>
       <div className="grid md:grid-cols-2 gap-7">
         {articles.map((a: Article) => (
           <ArticleCard key={a.slug} article={a} />
         ))}
         {articles.length === 0 && (
-          <p className="text-muted-foreground">No published stories yet.</p>
+          <p className="text-muted-foreground">Aucune histoire publiée pour l'instant.</p>
         )}
       </div>
     </div>
