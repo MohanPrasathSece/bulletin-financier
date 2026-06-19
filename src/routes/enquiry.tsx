@@ -1,17 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useEffect, useRef } from "react";
-import { createServerFn } from "@tanstack/react-start";
+import { useState, useEffect, useRef, FormEvent } from "react";
 
 // Server function for CRM submission
-const submitToCRM = createServerFn("POST", async (data: FormData) => {
-  const CRM_API_URL = process.env.CRM_API_URL;
-  const CRM_API_TOKEN = process.env.CRM_API_TOKEN;
+const submitToCRM = async (data: { [key: string]: string }) => {
+  const CRM_API_URL = import.meta.env.VITE_CRM_API_URL;
+  const CRM_API_TOKEN = import.meta.env.VITE_CRM_API_TOKEN;
 
   if (!CRM_API_URL || !CRM_API_TOKEN) {
     throw new Error("CRM configuration missing");
   }
 
-  const fullName = (data.get("name") as string || "").trim();
+  const fullName = (data.name || "").trim();
   const nameParts = fullName.split(" ");
   const firstName = nameParts[0] || "Unknown";
   const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "Unknown";
@@ -19,10 +18,10 @@ const submitToCRM = createServerFn("POST", async (data: FormData) => {
   const payload = {
     first_name: firstName,
     last_name: lastName,
-    email: data.get("email"),
-    phone: data.get("phone"),
+    email: data.email,
+    phone: data.phone,
     country_name: "US", // Default or extract if needed
-    description: data.get("message") || "No message provided",
+    description: data.message || "No message provided",
     custom_fields: {
       Source_ID: "Crypto Platform Enquiries"
     }
@@ -44,7 +43,7 @@ const submitToCRM = createServerFn("POST", async (data: FormData) => {
   }
 
   return { success: true };
-});
+};
 
 export const Route = createFileRoute("/enquiry")({
   head: () => ({
@@ -94,8 +93,10 @@ function EnquiryPage() {
     setError("");
 
     const formData = new FormData(e.currentTarget);
+    const dataObj = Object.fromEntries(formData.entries()) as { [key: string]: string };
+    
     try {
-      await submitToCRM(formData);
+      await submitToCRM(dataObj);
       setSuccess(true);
     } catch (err: any) {
       setError("Registration failed. Please try again later.");
