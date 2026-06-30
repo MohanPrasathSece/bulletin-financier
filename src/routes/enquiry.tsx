@@ -1,49 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef, FormEvent } from "react";
 
-// Server function for CRM submission
-const submitToCRM = async (data: { [key: string]: string }) => {
-  const CRM_API_URL = import.meta.env.VITE_CRM_API_URL;
-  const CRM_API_TOKEN = import.meta.env.VITE_CRM_API_TOKEN;
-
-  if (!CRM_API_URL || !CRM_API_TOKEN) {
-    throw new Error("CRM configuration missing");
-  }
-
-  const fullName = (data.name || "").trim();
-  const nameParts = fullName.split(" ");
-  const firstName = nameParts[0] || "Unknown";
-  const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "Unknown";
-
-  const payload = {
-    first_name: firstName,
-    last_name: lastName,
-    email: data.email,
-    phone: data.phone,
-    country_name: "US", // Default or extract if needed
-    description: data.message || "No message provided",
-    custom_fields: {
-      Source_ID: "Crypto Platform Enquiries"
-    }
-  };
-
-  const response = await fetch(CRM_API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "authorization": CRM_API_TOKEN
-    },
-    body: JSON.stringify(payload)
-  });
-
-  if (!response.ok) {
-    const text = await response.text();
-    console.error("CRM Error:", text);
-    throw new Error("Failed to submit to CRM");
-  }
-
-  return { success: true };
-};
+import { submitToCRM } from "../lib/crm";
 
 export const Route = createFileRoute("/enquiry")({
   head: () => ({
@@ -95,6 +53,17 @@ function EnquiryPage() {
     const formData = new FormData(e.currentTarget);
     const dataObj = Object.fromEntries(formData.entries()) as { [key: string]: string };
     
+    const cleanNum = (dataObj.phone || "").replace(/\s+/g, "");
+    if (!cleanNum) {
+      setError("Veuillez entrer un numéro de téléphone");
+      setLoading(false);
+      return;
+    } else if (!/^(\+41|0041|0)?[1-9]\d{8}$/.test(cleanNum)) {
+      setError("Veuillez entrer un numéro suisse valide (ex: 079 123 45 67)");
+      setLoading(false);
+      return;
+    }
+
     try {
       await submitToCRM(dataObj);
       setSuccess(true);
