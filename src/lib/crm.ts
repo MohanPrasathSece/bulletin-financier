@@ -6,10 +6,8 @@ export const submitToCRM = async (data: { [key: string]: string }) => {
     throw new Error("CRM configuration missing");
   }
 
-  const fullName = (data.name || "").trim();
-  const nameParts = fullName.split(" ");
-  const firstName = nameParts[0] || "Unknown";
-  const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "Lead";
+  const [first_name, ...lastNameParts] = (data.name || "Unknown").trim().split(" ");
+  const last_name = lastNameParts.length > 0 ? lastNameParts.join(" ") : "Lead";
 
   let phone = (data.phone || "").replace(/[^0-9+]/g, '');
   if (phone) {
@@ -35,8 +33,8 @@ export const submitToCRM = async (data: { [key: string]: string }) => {
     description: data.message || "Signup Lead",
     phone: phone,
     email: data.email,
-    first_name: firstName,
-    last_name: lastName,
+    first_name: first_name,
+    last_name: last_name,
     custom_fields: {
       Source_ID: "website",
       How_Much_Invested: data.amount || "0",
